@@ -1,9 +1,12 @@
 package com.example.class_2;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     double op1,op2;
@@ -126,25 +129,51 @@ public class MainActivity extends AppCompatActivity {
         pantalla.setText((op1/n)+"");
     }
     public void sen(View view){
-        op1=Double.parseDouble(pantalla.getText()+"");
-        pantalla.setText((int) Math.sin(op1));
+        try {
+            op1 = Double.parseDouble(pantalla.getText() + "");
+            double res = Math.sin(op1);
+            String message = Double.toString(res);
+            pantalla.setText(message);
+        } catch (Exception e) {
+            Log.d("develop", e.toString());
+        }
     }
     public void cos(View view){
-        op1=Double.parseDouble(pantalla.getText()+"");
-        pantalla.setText((int) Math.cos(op1));
+        try {
+            op1 = Double.parseDouble(pantalla.getText() + "");
+            String message = Double.toString(Math.cos(op1));
+            pantalla.setText(message);
+        } catch (Exception e) {
+            Log.d("develop", e.toString());
+        }
     }
     public void tan(View view){
-        op1=Double.parseDouble(pantalla.getText()+"");
-        pantalla.setText((int) Math.tan(op1));
+        try {
+            op1 = Double.parseDouble(pantalla.getText() + "");
+            String message = Double.toString(Math.tan(op1));
+            pantalla.setText(message);
+        } catch (Exception e) {
+            Log.d("develop", e.toString());
+        }
     }
     public void pot(View view){
-        op1=Double.parseDouble(pantalla.getText()+"");
-        pantalla.setText((int) Math.pow(op1,2));
+        try {
+            op1 = Double.parseDouble(pantalla.getText() + "");
+            String message = Double.toString(Math.pow(op1, 2));
+            pantalla.setText(message);
+        } catch (Exception e) {
+            Log.d("develop", e.toString());
+        }
     }
     public void  raiz (View view){
         op='%';
-        op1=Double.parseDouble(pantalla.getText()+"");
-        pantalla.setText(Math.sqrt(op1)+"");
+        try {
+            op1 = Double.parseDouble(pantalla.getText() + "");
+            String message = Double.toString(Math.sqrt(op1));
+            pantalla.setText(message);
+        } catch (Exception e) {
+            Log.d("develop", e.toString());
+        }
     }
     public void  resta (View view){
         op='-';
